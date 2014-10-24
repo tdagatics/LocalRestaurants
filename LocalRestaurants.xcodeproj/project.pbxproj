@@ -14,6 +14,7 @@
 		43915F4E19FAB54400542647 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43915F4D19FAB54400542647 /* Images.xcassets */; };
 		43915F5119FAB54400542647 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43915F4F19FAB54400542647 /* LaunchScreen.xib */; };
 		43915F5D19FAB54400542647 /* LocalRestaurantsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43915F5C19FAB54400542647 /* LocalRestaurantsTests.m */; };
+		43915F6719FAB5E200542647 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43915F6619FAB5E200542647 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		43915F5619FAB54400542647 /* LocalRestaurantsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalRestaurantsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43915F5B19FAB54400542647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43915F5C19FAB54400542647 /* LocalRestaurantsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalRestaurantsTests.m; sourceTree = "<group>"; };
+		43915F6619FAB5E200542647 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43915F6719FAB5E200542647 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		43915F3419FAB54400542647 = {
 			isa = PBXGroup;
 			children = (
+				43915F6619FAB5E200542647 /* MapKit.framework */,
 				43915F3F19FAB54400542647 /* LocalRestaurants */,
 				43915F5919FAB54400542647 /* LocalRestaurantsTests */,
 				43915F3E19FAB54400542647 /* Products */,

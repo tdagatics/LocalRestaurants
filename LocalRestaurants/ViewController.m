@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 
 @interface ViewController ()
 
@@ -14,9 +17,26 @@
 
 @implementation ViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+      //  CLLocationCoordinate2D zoomLocation;
+        //zoomLocation.latitude = 39.281516;
+       // zoomLocation.longitude= -76.580806;
+        
+    
+     //   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1, 1);
+        
+    //
+      //  [_mapView setRegion:viewRegion animated:YES];
+
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"%@", self.mapView.userLocation.title);
+    
+    _mapView.showsUserLocation = YES;
 }
 
 - (void)didReceiveMemoryWarning {
