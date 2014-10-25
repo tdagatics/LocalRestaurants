@@ -20,7 +20,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
       //  CLLocationCoordinate2D zoomLocation;
-        //zoomLocation.latitude = 39.281516;
+        //zoomLocation.latitude = 33.126731;
        // zoomLocation.longitude= -76.580806;
         
     
@@ -35,10 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 33.126731;
-    zoomLocation.longitude = -117.254098;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.1,0.1);
+    zoomLocation.latitude = 33.109084;
+    zoomLocation.longitude = -117.288364;
     
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000, 1000);
     [_mapView setRegion:viewRegion animated:YES];
     _mapView.showsUserLocation = YES;
     
@@ -48,7 +48,15 @@
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
         NSLog(@"Map Items: %@", response.mapItems);
+        
     }];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        for (MKMapItem *item in response.mapItems) {
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            annotation.title = item.name;
+            annotation.coordinate = item.placemark.coordinate;
+            [_mapView addAnnotation:annotation];
+        }}];
 }
 
 - (void)didReceiveMemoryWarning {
