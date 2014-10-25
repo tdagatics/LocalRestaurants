@@ -34,9 +34,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.mapView.userLocation.title);
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 33.126731;
+    zoomLocation.longitude = -117.254098;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.1,0.1);
     
+    [_mapView setRegion:viewRegion animated:YES];
     _mapView.showsUserLocation = YES;
+    
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = @"Restaurants";
+    request.region = _mapView.region;
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        NSLog(@"Map Items: %@", response.mapItems);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
