@@ -57,6 +57,10 @@
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             annotation.title = item.name;
             annotation.coordinate = item.placemark.coordinate;
+            annotation.subtitle = [NSString stringWithFormat:@"%@, %@ %@",
+                                   item.placemark.addressDictionary[@"Street"],
+                                   item.placemark.addressDictionary[@"State"],
+                                   item.placemark.addressDictionary[@"ZIP"]];
             [_mapView addAnnotation:annotation];
         }}];
     MKLocalSearchRequest *request2 = [[MKLocalSearchRequest alloc] init];
@@ -67,7 +71,13 @@
         for (MKMapItem *item in response.mapItems) {
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             annotation.title = item.name;
+            annotation.subtitle = item.description;
+            NSLog(@"Item description is: %@", item.description);
             annotation.coordinate = item.placemark.coordinate;
+            annotation.subtitle = [NSString stringWithFormat:@"%@, %@, %@",
+                                   item.placemark.addressDictionary[@"Street"],
+                                   item.placemark.addressDictionary[@"State"],
+                                   item.placemark.addressDictionary[@"ZIP"]];
             [_mapView addAnnotation:annotation];
         }
     }];
