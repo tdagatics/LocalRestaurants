@@ -35,8 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 42.364506;
-    zoomLocation.longitude = -71.057899;
+    zoomLocation.latitude = 40.7059302;
+    zoomLocation.longitude = -74.0073442;
     
     
     
@@ -44,8 +44,9 @@
     [_mapView setRegion:viewRegion animated:YES];
     _mapView.showsUserLocation = YES;
     
+    
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-    request.naturalLanguageQuery = @"Lobster Rolls";
+    request.naturalLanguageQuery = @"Bars";
     request.region = _mapView.region;
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     /*[search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
