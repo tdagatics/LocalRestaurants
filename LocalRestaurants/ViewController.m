@@ -38,7 +38,7 @@
     zoomLocation.latitude = 33.109084;
     zoomLocation.longitude = -117.288364;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000, 1000);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 10000, 10000);
     [_mapView setRegion:viewRegion animated:YES];
     _mapView.showsUserLocation = YES;
     
@@ -57,6 +57,8 @@
             annotation.coordinate = item.placemark.coordinate;
             [_mapView addAnnotation:annotation];
         }}];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
